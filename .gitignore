@@ -1,4 +1,4 @@
-# .gitignore
+.gitignore
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -6,3 +6,4 @@ dist/
 build/
 .env
 .venv
+.try.ipynb
