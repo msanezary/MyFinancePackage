@@ -1,13 +1,47 @@
 [project]
-name = "MyFinancePackage"
-version = "0.1.0"
-description = "A package where I group the tools that I use"
-authors = [
-    { name="Mohammed Said Anezary", email="msanezary@gmail.com" }
+name            = "myfinance"
+version         = "0.1.0"
+description     = "Foundational Python utilities for introductory finance"
+readme          = "README.md"
+license         = "MIT"                   # SPDX expression → no deprecation warning
+authors         = [{ name = "Mohammed‑Said Anezary", email = "msanezary@gmail.com" }]
+requires-python = ">=3.10"
+keywords        = ["finance", "education", "portfolio", "monte-carlo"]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Education",
+    "Topic :: Office/Business :: Financial",
 ]
-readme = "README.md"
-license = {text = "MIT"}
-dependencies = []
+
+# Core run‑time dependencies
+dependencies = [
+    "numpy>=1.25,<2.0",
+]
+
+[project.optional-dependencies]
+notebook = [
+    "pandas>=2.2",
+    "matplotlib>=3.9",
+    "yfinance>=0.2",
+]
+
+dev = [
+    "pytest>=8.2",
+    "black>=24.4",
+    "ruff>=0.4",
+    "mypy>=1.10",
+]
+
+docs = [
+    "sphinx>=7.3",
+    "furo>=2024.5",
+]
+
+[tool.setuptools.packages.find]
+where   = ["."]
+include = ["myfinance*"]
+exclude = ["notebooks*"]
 
 [build-system]
 requires = ["setuptools>=61.0"]
